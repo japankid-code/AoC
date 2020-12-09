@@ -1,3 +1,6 @@
+# https://adventofcode.com/2020/day/1
+# borrowed from: https://github.com/AidanGlickman/Advent-2020/day2 :)
+
 def readTokens(line):
     tokens = line.rstrip().split(' ') # splits each line at the space character, creating 3 tokens
     first, second = map(int, tokens[0].split('-'))

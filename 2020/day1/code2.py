@@ -1,4 +1,5 @@
-
+# https://adventofcode.com/2020/day/1
+# borrowed from: idk can find the link now (:
 
 from itertools import permutations
 

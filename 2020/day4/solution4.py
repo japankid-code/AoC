@@ -1,4 +1,5 @@
 # https://adventofcode.com/2020/day/4
+# https://github.com/Akumatic/Advent-of-Code/blob/master/2020/04/code.py borrowed this code :)
 
 import re
 
@@ -12,6 +13,7 @@ def readFile() -> list:
         return result
 
 def assert_fields(data: dict) -> bool:
+    # this parses the dictionary
     return all((k in data for k in ("byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid")))
     
 def part1(vals: list) -> int:

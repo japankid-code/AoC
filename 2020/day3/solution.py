@@ -1,3 +1,6 @@
+# https://adventofcode.com/2020/day/1
+# borrowed from: https://github.com/AidanGlickman/Advent-2020/day3 :)
+
 def findtrees(inarr, y, x): # inarr takes in an array, an array of the lines seen in the input
     currx = 0
     curry = 0

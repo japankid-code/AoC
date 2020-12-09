@@ -1,3 +1,7 @@
+#  this code does NOT work hehe
+# https://adventofcode.com/2020/day/1
+# borrowed from: https://github.com/AidanGlickman/Advent-2020 :)
+
 def f(v, i, S, memo):
   if i >= len(v): return 1 if S == 0 else 0
   if (i, S) not in memo:  # <-- Check if value has not been calculated.
