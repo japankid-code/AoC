@@ -1,19 +1,19 @@
-# https://adventofcode.com/2020/day/6
-# borrowed from https://github.com/Akumatic/Advent-of-Code/blob/master/2020/06/code.py :)
+# https://adventofcode.com/2020/day/7
+# borrowed from https://github.com/Akumatic/Advent-of-Code/blob/master/2020/07/code.py :)
 # just typing out and leaving notes
-# 
+# honestly this one is pretty hard, i'll have to make some more notes on it later
 
 def readFile() -> list:
     with open(f"{__file__.rstrip('code.py')}input.txt", "r") as f:
         return [line.strip() for line in f.read().strip().split("\n")]
 
-def parseRules(input) -> dict:
-    rules = {}
+def parseRules(input) -> dict: # this creates a new dictionary of bags connected to their rules
+    rules = {} # these set up the blank dictionaries.
     amount = {}
     for line in input:
-        rule = line.strip(".").split(" contain ")
+        rule = line.strip(".").split(" contain ") # this splits it at the contain,
         bag = rule[0][:-(4 if rule[0][-1]=="g" else 5)]
-        if rule[1] == "no other bags":
+        if rule[1] == "no other bags": # uses indexing to determine if the 2nd item in the dict entry is 'no other bags'
             rules[bag] = []
             amount[bag] = []
         else:
@@ -21,8 +21,10 @@ def parseRules(input) -> dict:
             rules[bag] = [" ".join(c[1:3]) for c in contents]
             amount[bag] = [int(c[0]) for c in contents]
     return rules, amount
+    # 
 
-def can_contain(rules: dict, rule, bag, cache):
+def can_contain(rules: dict, rule, bag, cache): # this one for part 1 
+    # How many bag colors can eventually contain at least one shiny gold bag?
     if rule in cache:
         return cache[rule]
     if bag in rules[rule]:
@@ -31,7 +33,8 @@ def can_contain(rules: dict, rule, bag, cache):
         cache[rule] = any(can_contain(rules, b, bag, cache) for b in rules[rule])
     return cache[rule]
 
-def count_bags(rules: dict, amount: dict, bag, cache):
+def count_bags(rules: dict, amount: dict, bag, cache): # this one for part 2
+    #How many individual bags are required inside your single shiny gold bag?
     if bag in cache:
         return cache[bag]
     
