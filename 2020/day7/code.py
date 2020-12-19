@@ -7,12 +7,12 @@ def readFile() -> list:
     with open(f"{__file__.rstrip('code.py')}input.txt", "r") as f:
         return [line.strip() for line in f.read().strip().split("\n")]
 
-def parseRules(input) -> dict: # this creates a new dictionary of bags connected to their rules
-    rules = {} # these set up the blank dictionaries.
-    amount = {}
+def parseRules(input) -> dict: # this creates a new dictionary of bags keyed to their rules
+    rules = {} # these establish the blank dictionaries, a blank data structure
+    amount = {} # these are an associative array
     for line in input:
         rule = line.strip(".").split(" contain ") # this splits it at the contain,
-        bag = rule[0][:-(4 if rule[0][-1]=="g" else 5)]
+        bag = rule[0][:-(4 if rule[0][-1]=="g" else 5)] # colon inside the bracket here is for slicing up 
         if rule[1] == "no other bags": # uses indexing to determine if the 2nd item in the dict entry is 'no other bags'
             rules[bag] = []
             amount[bag] = []
