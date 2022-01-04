@@ -1,4 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿// thanks to this, glancing at it helped refactoring https://github.com/DjordjeNedovic/Advent-of-Code/blob/main/Advent-of-Code-2021/day-05/Program.cs
 
 var linesSmall = File.ReadLines(@"C:\Users\jrank\Documents\GitHub\japankid-code\AoC\2021\day5\inputSmall.txt").ToList();
 var lines = File.ReadLines(@"C:\Users\jrank\Documents\GitHub\japankid-code\AoC\2021\day5\input.txt").ToList();
