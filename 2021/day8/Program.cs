@@ -12,11 +12,11 @@ class OutputScan {
     public int ValuePart2 = 0;
 
     public OutputScan(List<string> inputs) {
-        ValuePart1 = Part2(inputs);
-        ValuePart2 = Part2(inputs, false);
+        ValuePart1 = ScanInputs(inputs);
+        ValuePart2 = ScanInputs(inputs, false);
     }
 
-    private int Part2(List<string> inputs, bool partOne = true) {
+    private int ScanInputs(List<string> inputs, bool partOne = true) {
         var outputs = InputSelect(inputs);
         var signals = InputSelect(inputs, false);
 
